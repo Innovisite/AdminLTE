@@ -6,6 +6,9 @@
     "url": "git://github.com/almasaeed2010/AdminLTE.git"
   },
   "license": "MIT",
+  "dependencies": {
+    "moment": "moment/moment#2.10.2"
+  },	
   "devDependencies": {
     "R2": "^1.4.3",
     "grunt": "~0.4.5",
