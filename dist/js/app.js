@@ -42,7 +42,7 @@ $.AdminLTE.options = {
   //General animation speed for JS animated elements such as box collapse/expand and
   //sidebar treeview slide up/down. This options accepts an integer as milliseconds,
   //'fast', 'normal', or 'slow'
-  animationSpeed: 500,
+  animationSpeed: 0,
   //Sidebar push menu toggle button selector
   sidebarToggleSelector: "[data-toggle='offcanvas']",
   //Activate sidebar push menu
@@ -389,6 +389,7 @@ function _init() {
     var _this = this;
     var animationSpeed = $.AdminLTE.options.animationSpeed;
     $(menu).on('click', 'li a', function (e) {
+
       //Get the clicked link and the next element
       var $this = $(this);
       var checkElement = $this.next();
@@ -408,9 +409,9 @@ function _init() {
         //Get the parent menu
         var parent = $this.parents('ul').first();
         //Close all open menus within the parent
-        var ul = parent.find('ul:visible').slideUp(animationSpeed);
+       // var ul = parent.find('ul:visible').slideUp(animationSpeed);
         //Remove the menu-open class from the parent
-        ul.removeClass('menu-open');
+       // ul.removeClass('menu-open');
         //Get the parent li
         var parent_li = $this.parent("li");
 
@@ -418,7 +419,7 @@ function _init() {
         checkElement.slideDown(animationSpeed, function () {
           //Add the class active to the parent li
           checkElement.addClass('menu-open');
-          parent.find('li.active').removeClass('active');
+         // parent.find('li.active').removeClass('active');
           parent_li.addClass('active');
           //Fix the layout in case the sidebar stretches over the height of the window
           _this.layout.fix();
